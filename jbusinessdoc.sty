@@ -1,0 +1,61 @@
+%ヘッダ定義
+\makeatletter
+\def\@documentnumber{}
+\def\documentnumber#1{\gdef\@documentnumber{#1}}
+\def\@destination{}
+\def\destination#1{\gdef\@destination{#1}}
+\renewcommand{\@maketitle}{\newpage
+%文章番号（もしあれば）＋日付
+\begin{flushright}
+    \if{\@documentnumber}{}
+    \else
+    \@documentnumber \par
+    \fi    
+\@date
+\end{flushright}
+\vspace{1.0zh}
+%宛先
+\@destination
+\vspace{1.0zh}
+%作成者
+\begin{flushright}
+\@author
+\end{flushright}
+\bigskip
+%タイトル
+    \begin{center}
+        {\Large \@title}
+    \end{center}
+    \bigskip
+    }
+\makeatother
+%ヘッダ定義終了
+
+%拝啓～敬具を出力するhaikei環境
+\newenvironment {haikei}%
+{\noindent 拝啓 \par }%
+{%
+\begin{flushright}%
+敬具%
+\end{flushright}%
+\par %
+}
+
+%記～以上を定義するkigaki環境
+\newenvironment {kigaki}%
+{%
+\vspace{1.0zh}%
+\begin{center}%
+    記%
+\end{center}%
+\par }%
+{%
+\vspace{1.0zh}%
+\begin{flushright}%
+    以上%
+\end{flushright}%
+\par %
+}
+
+%ページ番号を出力しない
+\pagestyle{empty}
