@@ -1,8 +1,8 @@
 # jbusinessdoc
 
-LaTeX style file for Japanese Business Documents.
+LaTeX style file for Japanese business documents.
 
-ビジネス文書をLaTeXで書くためのスタイルファイル．
+LaTeXでビジネス文書を書くためのスタイルファイル．
 
 ## 使用法
 
